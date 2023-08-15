@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+  <header class="text-center">
+    <h1>Lista de Tareas</h1>
+  </header>
+
+  <table class="table table-dark table-striped">
+    <tr>
+      <th class="text-center">ID</th>
+      <th>Título</th>
+      <th>Descripción</th>
+      <th class="text-center">Acciones</th>
+    </tr>
+    {% for task in tasks_db %}
+      <tr>
+        <td>{{ task.id }}</td>
+        <td>{{ task.title }}</td>
+        <td>{{ task.description }}</td>
+        <td class="text-center">
+          <a class="btn btn-success" href="/edit/{{ task.id }}">Editar</a>
+          <a class="btn btn-danger" href="/delete/{{ task.id }}">Eliminar</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+
+
+  <a class="btn btn-primary" href="/create">Crear nueva tarea</a>
+{% endblock %}

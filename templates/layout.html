@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD en Flask</title>
+
+    <!-- CSS y JS de Boostrap -->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css') }}" />
+    <script src="{{ url_for('static', filename = 'js/popper.min.js') }}" async defer></script>
+    <script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}" async defer></script>
+  </head>
+  <body>
+    <div class="container">
+      {% block main %}
+        <!-- Aca va a cargar lo que venga del template que lo llame y que indique que este bloque el que va ha usar -->
+      {% endblock %}
+    </div>
+  </body>
+</html>

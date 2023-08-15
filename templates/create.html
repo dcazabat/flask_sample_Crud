@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<header class="text-center">
+    <h1>Crear Tarea</h1>
+  </header>
+  <form method="POST" action="/create">
+    <div class="mb-3">
+      <label for="title" class="form-label">Título</label>
+      <input name="title" type="text" class="form-control" id="title" placeholder="Titulo de la Tarea" required />
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Descripcion</label>
+      <textarea name="description" type="text" class="form-control" id="description" required></textarea>
+    </div>
+    <input class="btn btn-success" type="submit" value="Crear" />
+  </form>
+  <div class="text-center">
+    <a class="btn btn-warning" href="/">Volver a la lista de tareas</a>
+  </div>
+{% endblock main %}
